@@ -52,10 +52,10 @@ void ChartWidget::createMatrix() {
     double tranlationX = -xMin * scaleX - glRange / 2.0;
     double tranlationY = -yMin * scaleY - glRange / 2.0;
     _matrix = new GLfloat[16] {
-        scaleX, 0.0, 0.0, 0.0,
-        0.0, scaleY, 0.0, 0.0,
+        static_cast<float>(scaleX), 0.0, 0.0, 0.0,
+        0.0, static_cast<float>(scaleY), 0.0, 0.0,
         0.0, 0.0, 1.0, 0.0,
-        tranlationX, tranlationY, 0.0, 1.0
+        static_cast<float>(tranlationX), static_cast<float>(tranlationY), 0.0, 1.0
     };
 }
 
